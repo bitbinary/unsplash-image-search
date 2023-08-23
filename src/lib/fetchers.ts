@@ -37,8 +37,10 @@ export const searchImages = async (query: {
     };
     switch (response.status) {
       case 401:
-      case 403:
         error.message = "Unable to verify the credentials";
+        break;
+      case 403:
+        error.message = "Cannot access the api at the moment";
         break;
       case 404:
         error.message = "Resource not found";
