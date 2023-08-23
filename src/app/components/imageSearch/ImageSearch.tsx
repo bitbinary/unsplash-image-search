@@ -1,6 +1,6 @@
 "use client";
-import { use, useEffect, useState } from "react";
-import useSWR from "swr";
+import { useEffect, useState } from "react";
+import useSWR, { preload } from "swr";
 
 import { SearchImagesResponse, searchImages } from "@/lib/fetchers";
 import { TablePagination } from "@mui/material";
@@ -38,6 +38,21 @@ function ImageSearch({ searchInput }: ImageSearchProps) {
     searchImages,
     {
       keepPreviousData: true,
+      onSuccess: (data) => {
+        if (data?.total) {
+          preload(
+            searchInput
+              ? {
+                  name: `imageSearch`,
+                  searchInput: searchInput,
+                  pageIndex: pageIndex + 2,
+                  perPage: rowsPerPage,
+                }
+              : null,
+            searchImages
+          );
+        }
+      },
     }
   );
 
