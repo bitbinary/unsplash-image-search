@@ -9,7 +9,6 @@ export interface SearchImagesResponse {
 }
 
 interface SWRError {
-  info: any;
   status: number;
   message: string;
 }
@@ -32,7 +31,6 @@ export const searchImages = async (query: {
   );
   if (!response.ok) {
     const error: SWRError = {
-      info: await response.json(),
       status: response.status,
       message:
         "Unable to process request at the moment. Please try again later",

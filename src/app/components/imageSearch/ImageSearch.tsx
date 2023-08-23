@@ -34,9 +34,6 @@ function ImageSearch({ searchInput }: ImageSearchProps) {
     searchImages,
     {
       keepPreviousData: true,
-      onError: (error) => {
-        console.error(error);
-      },
     }
   );
 
