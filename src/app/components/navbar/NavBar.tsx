@@ -1,13 +1,17 @@
-import { Grid } from "@mui/material";
-
+import { Grid, Typography } from "@mui/material";
 export default function NavBar() {
   return (
-    <nav>
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <h1>Unsplash Image Search</h1>
-        </Grid>
+    <Grid container spacing={2} component="nav" marginY={2}>
+      <Grid item xs={12}>
+        <Typography
+          fontWeight={800}
+          fontSize={24}
+          fontFamily={"monospace"}
+          textAlign={"center"}
+        >
+          Unsplash Image Search
+        </Typography>
       </Grid>
-    </nav>
+    </Grid>
   );
 }
