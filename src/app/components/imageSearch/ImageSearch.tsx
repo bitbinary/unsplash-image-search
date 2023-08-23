@@ -15,7 +15,7 @@ export interface ImageSearchProps {
   searchInput: string;
 }
 
-const DEFAULT_PAGE_SIZE = 20;
+const DEFAULT_PAGE_SIZE = 15;
 const DEFAULT_PAGE_INDEX = 0;
 
 function ImageSearch({ searchInput }: ImageSearchProps) {
@@ -63,7 +63,7 @@ function ImageSearch({ searchInput }: ImageSearchProps) {
         page={pageIndex}
         onPageChange={handleChangePage}
         rowsPerPage={rowsPerPage}
-        rowsPerPageOptions={[20, 40, 60, 100]}
+        rowsPerPageOptions={[15, 30, 45, 75]}
         labelRowsPerPage="Images per page"
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
