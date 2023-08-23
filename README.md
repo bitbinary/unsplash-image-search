@@ -10,7 +10,7 @@ This is a sample app to search for images using the Unsplash Api using Typescrip
 
 you need :
 
-- node 14.18.0 or higher with npm - (required)
+- node 14.18.0 or higher with npm - (required) (recommended node v18.16.0 and npm v9.5.1)
 - git - (optional)
 
 ## Setting up
