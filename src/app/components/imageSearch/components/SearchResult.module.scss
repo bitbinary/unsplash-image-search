@@ -1,0 +1,10 @@
+.imageItem {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 200px;
+  width: 100%;
+  background-color: #cbcbcb;
+  .image {
+    object-fit: cover;
+  }
+}
