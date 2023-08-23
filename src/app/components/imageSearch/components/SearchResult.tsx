@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
 import { ImageType } from "@/types/Image";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import NoResultsFound from "./NoResultsFound";
 import styles from "./SearchResult.module.scss";
@@ -12,9 +14,14 @@ export interface SearchResultProps {
   isLoading: boolean;
 }
 
-const renderImageList = (images: ImageType[]) => {
+const renderImageList = (images: ImageType[], isSmallView: boolean) => {
   return (
-    <ImageList cols={4} rowHeight={200} variant="standard">
+    <ImageList
+      cols={isSmallView ? 1 : 3}
+      rowHeight={200}
+      variant="standard"
+      gap={6}
+    >
       {images?.map((image) => (
         <ImageListItem key={image.id} className={styles.imageItem}>
           <Image
@@ -34,13 +41,15 @@ const renderImageList = (images: ImageType[]) => {
   );
 };
 function SearchResult({ images, searchTerm, isLoading }: SearchResultProps) {
+  const theme = useTheme();
+  const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box mb={4}>
       <Typography mb={2}>
         {isLoading ? "Searching" : "Search"} results for <b>{searchTerm}</b>
       </Typography>
       {images?.length === 0 && <NoResultsFound />}
-      {!!images?.length && renderImageList(images)}
+      {!!images?.length && renderImageList(images, matchesSm)}
     </Box>
   );
 }
