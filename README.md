@@ -19,13 +19,16 @@ Once the git repo is cloned / downloaded, navigate to the folder
 
 ### Dependencies
 
-Install the dependencies by running
+Install the dependencies by running:
 
 ```bash
-npm ci  (install based on package.lock)
+npm ci
+```
 
+note: `npm ci` installs the dependency based on the package.lock to ensure no unwanted package version changes occur
 or
 
+```bash
 npm i
 
 ```
