@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import useSWR from "swr";
 
 import { SearchImagesResponse, searchImages } from "@/lib/fetchers";
@@ -21,6 +21,10 @@ const DEFAULT_PAGE_INDEX = 0;
 function ImageSearch({ searchInput }: ImageSearchProps) {
   const [pageIndex, setPageIndex] = useState(DEFAULT_PAGE_INDEX);
   const [rowsPerPage, setRowsPerPage] = useState(DEFAULT_PAGE_SIZE);
+
+  useEffect(() => {
+    setPageIndex(DEFAULT_PAGE_INDEX);
+  }, [searchInput]);
 
   const { data, error, isLoading, isValidating } = useSWR<SearchImagesResponse>(
     searchInput
