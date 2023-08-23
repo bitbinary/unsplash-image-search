@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { Container } from "@mui/material";
-import NavBar from "@components/navbar/NavBar";
+import NavBar from "@/app/components/common/navbar/NavBar";
 import { SWRProvider } from "./swr-provider";
 import styles from "./page.module.scss";
 const inter = Inter({ subsets: ["latin"] });

@@ -6,7 +6,7 @@ export default function NavBar() {
         <Typography
           fontWeight={800}
           fontSize={24}
-          fontFamily={"monospace"}
+          fontFamily={"sans-serif"}
           textAlign={"center"}
         >
           Unsplash Image Search
