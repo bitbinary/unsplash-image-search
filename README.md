@@ -60,5 +60,5 @@ Hurray, your local development server should be running now.
 
 1. The current usage of the API exposes Unsplash API Key. It is better to have a server handle the request to the api and the user request to the server should be validated for more security
 2. Improve the usage of theme library for branding and theming, currently it is only used for layout and some components. It can improve code maintainability and scalability
-3. The response time and wait time can be reduced by prefetching some data.
+3. The response time and wait time can be reduced by prefetching some data. Improve prefetching and caching without affecting the browser performance
 4. Added features to use full capability of the api by extending the app capability to query with `order_by`, `collections`, `content_filter`, `color`, `orientation`
